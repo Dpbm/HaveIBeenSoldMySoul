@@ -1,5 +1,5 @@
 import { TopBarContainer } from '../styles/topBar';
-import { FaHome, FaGithub, FaInfo } from 'react-icons/fa';
+import { FaHome, FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 export default function TopBar(){
     return(
@@ -10,10 +10,6 @@ export default function TopBar(){
 
             <Link href="https://github.com/Dpbm/HaveIBeenSoldMySoul">
                 <FaGithub size={30} />
-            </Link>
-            
-            <Link href="/about">
-                <FaInfo size={30} />
             </Link>
         </TopBarContainer>
     );

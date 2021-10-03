@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Tooltip from '@mui/material/Tooltip';
 
 export const CardContainer = styled.div`
     width: 200px;
@@ -14,6 +15,13 @@ export const CardContainer = styled.div`
     border-radius: 5px;
     border: 1px solid white;
 
+    margin: 20px 20px 20px 20px;
+
+    img{
+        width: 128px;
+        height: 128px;
+    }
+
     box-shadow:
         0px 0px 11.6px rgba(0, 0, 0, 0.025),
         0px 0px 26.9px rgba(0, 0, 0, 0.038),
@@ -27,6 +35,7 @@ export const CardContainer = styled.div`
         border: 1px solid rgba(0, 0, 0, 0.3);
         cursor: pointer;
     }
+
 `;
 
 export const CardHeader = styled.span`
@@ -35,4 +44,11 @@ export const CardHeader = styled.span`
     text-align: center;
     justify-content: center;
     align-items: center;
+`;
+
+export const RateIconContainer = styled(Tooltip)`
+    :hover{
+        opacity: 0.6;
+        cursor: pointer;
+    }
 `;

@@ -8,6 +8,8 @@ export const MainContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
     
 `;
 
@@ -20,8 +22,6 @@ export const HeaderContainer = styled.div`
     flex-direction: column;
 
     margin-top: 20px;
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     h3{ 
         margin-top: -10px;
@@ -39,24 +39,33 @@ export const SearchContainer = styled.div`
     padding: 4px;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.7);
+
     svg:hover{
         cursor: pointer;
         opacity: 0.6;
     }
     input{ 
         text-align: center;
-        width: 100%;
+        width: 90%;
         height: 60px;
         font-size: 30px;
         border: 0;
         outline: 0;
     }
+
+
+    @media(max-width:900px){ width: 70%; }
+
 `;
 
 export const CardsContainer = styled.div`
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 80px;
+    display: flex;
+    place-items: center;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 `;
 
 export const All = styled.h1`
