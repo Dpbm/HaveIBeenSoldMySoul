@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import { useRouter } from "next/dist/client/router";
 import React, { useEffect } from "react";
 import { toast } from "react-toastify";
@@ -39,7 +39,7 @@ export default function All({data}:any){
 
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
     const { data } = await supabase
       .from("enterprises")
       .select('enterprise, rate')
