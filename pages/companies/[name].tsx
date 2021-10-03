@@ -1,4 +1,4 @@
-import { GetStaticProps, GetStaticPaths } from 'next'
+import { GetServerSideProps } from 'next'
 import { supabase } from '../../utils/supabaseClient';
 import { toast } from 'react-toastify';
 import { useEffect } from 'react';
@@ -45,7 +45,7 @@ export default function Companies({data}:any){
 
 
 
-export const getStaticProps: GetStaticProps = async ({params}) => {
+export const getServerSideProps: GetServerSideProps = async ({params}) => {
     const {name} : any = params;
 
     const {data, error} = await supabase
@@ -60,13 +60,3 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
     return {props:{data}}
 }
 
-
-export const getStaticPaths: GetStaticPaths = async () => {
-    const {data}:any = await supabase
-        .from('enterprises')
-        .select('enterprise');
-
-    const paths = data.map((enterprise:EnterpriseProps) => ({params: { name: enterprise.enterprise }}));
-
-    return { paths, fallback: false }
-}
