@@ -26,7 +26,6 @@ export const TermsContainer = styled.div`
     #summary{ 
         max-width: 100%;
         overflow-x: auto;
-        border: 1px solid red;
         font-size: 20px; 
         display: flex;
         justify-content: center;
