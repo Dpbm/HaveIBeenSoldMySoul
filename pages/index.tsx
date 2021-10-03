@@ -3,7 +3,7 @@ import { FaGhost } from 'react-icons/fa';
 import { FiArrowRight, FiSearch } from 'react-icons/fi'
 import TopBar from "../components/topBar";
 import Card from '../components/card';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import { supabase } from "../utils/supabaseClient";
 import { useEffect, useState } from "react";
 import Link from 'next/link';
@@ -93,7 +93,7 @@ export default function Home({data}:any){
 }
 
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { data } = await supabase
     .from("enterprises")
     .select('enterprise, rate')
@@ -101,6 +101,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     .order('id',  {ascending: false} );
 
   return{
-    props: {data: data || []}
+    props: {data: data || []},
   }
 }
