@@ -22,7 +22,12 @@ export const CardContainer = styled.div`
         height: 128px;
     }
 
-    box-shadow:
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    :hover{
+        cursor: pointer;
+        transform: scale(1.1);
+        box-shadow:
         0px 0px 11.6px rgba(0, 0, 0, 0.025),
         0px 0px 26.9px rgba(0, 0, 0, 0.038),
         0px 0px 48.4px rgba(0, 0, 0, 0.048),
@@ -30,10 +35,6 @@ export const CardContainer = styled.div`
         0px 0px 132.3px rgba(0, 0, 0, 0.065),
         0px 0px 231.2px rgba(0, 0, 0, 0.074),
         0px 0px 500px rgba(0, 0, 0, 0.09);
-
-    :hover{
-        border: 1px solid rgba(0, 0, 0, 0.3);
-        cursor: pointer;
     }
 
 `;
